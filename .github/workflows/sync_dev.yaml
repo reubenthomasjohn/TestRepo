@@ -3,7 +3,7 @@ name: Sync dev with main
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
