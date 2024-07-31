@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Check out the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Fetch all history so we can rebase
       - name: Fetch all branches
@@ -25,5 +25,4 @@ jobs:
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/reubenthomasjohn/TestRepo.git
           git push --force-with-lease origin dev
