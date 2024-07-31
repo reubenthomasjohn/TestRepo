@@ -20,10 +20,10 @@ jobs:
       - name: Checkout dev branch
         run: git checkout dev
       - name: Rebase dev on main
-        run: git rebase main
+        run: git rebase origin/main
       - name: Push changes to dev
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/OWNER/REPO.git
+          git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/reubenthomasjohn/TestRepo.git
           git push --force-with-lease origin dev
